@@ -3,11 +3,11 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 
 import { Cat } from './interfaces/cat.interface';
-import { CatInput } from 'src/inputs/cat.input';
+import { CatInput } from 'src/cats/inputs/cat.input';
 
 @Injectable()
 export class CatsService {
-  constructor(@InjectModel('Cat') private catModel: Model<Cat>) {}
+  constructor(@InjectModel('Cat') private catModel: Model<Cat>) { }
 
   async create(createCatDto: CatInput): Promise<Cat> {
     const createdCat = new this.catModel(createCatDto);

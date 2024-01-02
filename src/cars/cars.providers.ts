@@ -1,11 +1,11 @@
 import { Connection } from 'mongoose';
-import { CatSchema } from './schemas/cat.schema';
+import { CarSchema } from './schemas/car.schema';
 
-export const catsProviders = [
+export const carsProviders = [
   {
     //avoid using magic strings like 'cat_model', 'database_connection'. They should be kept in the seperated constants.ts
-    provide: 'CAT_MODEL',
-    useFactory: (connection: Connection) => connection.model('Cat', CatSchema),
+    provide: 'CAR_MODEL',
+    useFactory: (connection: Connection) => connection.model('Car', CarSchema),
     inject: ['DATABASE_CONNECTION'],
   },
 ];
