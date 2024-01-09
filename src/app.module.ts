@@ -14,7 +14,7 @@ import { config } from 'dotenv';
     CarsModule,
     ConfigModule.forRoot(),
     GraphQLModule.forRoot<ApolloDriverConfig>({
-      playground: process.env.NODE_ENV === "production" ? false : true,
+      playground: true,
       driver: ApolloDriver,
       autoSchemaFile: true,
     }),
